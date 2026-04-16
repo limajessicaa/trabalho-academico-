@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+  --pink: #f0346c;
+  --pink-light: #ff6b9d;
+  --dark: #0f172a;
+  --white: #ffffff;
+  --gray: #94a3b8;
+  --radius: 16px;
+}
+
+/* RESET BASICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--dark);
+}
+
+/* CABEÇALHO COM FLEXBOX */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-cta {
+  background: var(--pink);
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: white !important;
+}
+
+/* HERO */
+#home {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--dark);
+  padding-top: 80px;
+}
+
+/* IMAGEM */
+.hero-img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGEM PRINCIPAL */
+.hero-avatar {
+  width: 420px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 40px;
+  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transition: 0.4s;
+}
+
+.hero-avatar:hover {
+  transform: scale(1.04);
+}
+
+/* FORMA GEOMÉTRICA (BLOB) */
+.hero-img::before {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 540px;
+  background: linear-gradient(135deg, #f0346c, #ff6b9d);
+  border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+  filter: blur(20px);
+  opacity: 0.6;
+}
+
+/* FORMA EXTRA */
+.hero-img::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  top: 60px;
+  right: 60px;
+  transform: rotate(25deg);
+  border-radius: 20px;
+}
+
+/* TEXTO */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px;
+}
+
+.hero-tag {
+  color: var(--pink);
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.8rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  color: rgba(255,255,255,0.6);
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* SOBRE */
+#sobre {
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  background: var(--pink);
+  color: white;
+}
+
+/* CITAÇÃO INSPIRADORA */
+.about-quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* TEXTO SOBRE */
+#sobre h3 {font-size: 2.5rem; margin-bottom: 16px; color: white;}
+.about-label { color: rgba(255,255,255,0.8); text-transform: uppercase; 
+  letter-spacing: 2px; margin-bottom: 10px;} 
+
+#sobre p { color: rgba(255,255,255,0.9); text-transform: uppercase; 
+  letter-spacing: 2px; margin-bottom: 10px;
+  line-height: 1.6; font-size: 1.1rem; }
+
+#sobre br { color: rgba(255,255,255,0.9); line-height: 1.6; font-size: 1.1rem; }
+
+.about-quote {
+  font-family: 'DM Serif Display', serif; font-size: 2rem;
+}
+
+
+.skill-tag {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin: 5px;
+  display: inline-block;
+}
+
+/* PROJETOS */
+#projetos {  padding: 80px 60px;}
+#projetos h2 {
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  text-align: center;
+  color: var(--pink);
+}
+
+section {
+    display: block;
+    unicode-bidi: isolate;
+}
+.section-eyebrow {
+    font-family: 'DM Serif Display', serif;
+    color: var(--pink);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+} 
+.section-title {          
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--pink);
+}
+.filter-tabs {
+    display: flex;
+     justify-content: center;
+     margin-bottom: 40px;
+     gap: 10px;
+     list-style: none;}
+
+/* Grade de projetos com CSS Grid */
+#lista-projetos { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;}
+
+/* Card de cada projeto */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.card:hover {transform: translateY(-5px);}
+.card h3 {font-family: 'DM Serif Display', serif; 
+  font-size: 1.1rem;
+  margin-bottom: 8px; 
+  color: linear-gradient(135deg, #f0346c, #ff6b9d);} 
+
+.card p { color: var(--pink);  margin-bottom: 20px;}   
+.card a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--pink);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}  
+
+
+
+/* CONTATO */
+#contato {
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  background: #f8fafc;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  margin-top: 10px;
+  padding: 12px;
+  background: var(--pink);
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* RODAPÉ */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 30px 60px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVIDADE (mobile) */
+@media (max-width: 600px) {
+  #home {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-avatar {
+    width: 260px;
+    height: 320px;
+  }
+
+  #sobre, #contato {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
